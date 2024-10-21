@@ -2,8 +2,8 @@
 Database models.
 """
 
-from django.db import models #type: ignore
-from django.contrib.auth.models import ( #type: ignore
+from django.db import models  # type: ignore
+from django.contrib.auth.models import (  # type: ignore
     AbstractBaseUser,
     BaseUserManager,
     PermissionsMixin,
@@ -31,7 +31,6 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-
 
 
 class User(AbstractBaseUser, PermissionsMixin):
