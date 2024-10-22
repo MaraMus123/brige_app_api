@@ -37,6 +37,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     """User in the system"""
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255,)
+
+    class Gender(models.TextChoices):
+        MALE = "m", "Male"
+        FEMALE = "f", "Female"
+        OTHER = "o", "Other"
+        NO = "n", "I dont want to answer"
+    gender = models.CharField(max_length=1, choices=Gender.choices,
+                              default=Gender.MALE)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
