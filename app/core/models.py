@@ -1,7 +1,7 @@
 """
 Database models.
 """
-from django.conf import settings # type: ignore
+from django.conf import settings  # type: ignore
 from django.db import models  # type: ignore
 from django.contrib.auth.models import (  # type: ignore
     AbstractBaseUser,
@@ -52,6 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
+
 class Recipe(models.Model):
     """Recipe object."""
     user = models.ForeignKey(
@@ -80,6 +81,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Ingredient(models.Model):
     """Ingredients to be included in recipes."""
